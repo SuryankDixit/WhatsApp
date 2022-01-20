@@ -55,7 +55,7 @@
             android:text="Click for Sign Up" />
 
         <Button
-            android:id="@+id/SignInBtn"
+            android:id="@+id/signInBtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
