@@ -2,6 +2,8 @@ package com.example.whatsapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.whatsapp.Adapter.FragmentsAdapter;
 import com.example.whatsapp.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         auth = FirebaseAuth.getInstance();
+        binding.viewPager.setAdapter(new FragmentsAdapter(getSupportFragmentManager()));        // go see fragmens lecture;
+        binding.tabLayout.setupWithViewPager(binding.viewPager);
+
     }
 
     // Created a settings and logout menu in the res folder and inflating it here
